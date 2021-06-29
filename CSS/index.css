@@ -17,6 +17,12 @@
     width:100%;
     padding: 30px 0;
     /* background: rgb(202, 6, 6); */
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky{
+    padding: 15px 0;
+    background: crimson;
 }
 
 .navbar .NameHead{
@@ -49,6 +55,17 @@
 
 }
 
+.navbar.sticky .menu li a:hover {
+    color:maroon;
+}
+
+.menu-btn {
+    color:#fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
 /*home section styling*/
 
 .home{
@@ -78,4 +95,90 @@
 .home .home-content .text-3{
     font-size: 30px;
     margin : 5px  0;
+}
+
+.home .home-content .text-3 span{
+    color:crimson;
+    font-weight: 600;
+}
+
+.home .home-content a{
+    display: inline-block;
+    background: crimson ;
+    color: #fff;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+}
+
+.home .home-content a:hover{
+    color:crimson;
+    background: none;
+}
+
+/*responsive media start*/
+
+@media (max-width: 991px){
+    .max-width {
+        padding: 0 50px;
+        }
+
+        .menu-btn {
+            display: block;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .menu-btn i.active:before {
+            content: "\f00d";
+        }
+        .navbar .menu {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            left: -100%;
+            top: 0;
+            background: #111;
+            text-align: center;
+            padding-top: 80px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .menu.active{
+            left: 0;
+        }
+        .navbar .menu li {
+            display: block;
+        }
+    
+        .navbar .menu li a {
+            display:inline-block;
+            margin: 20px 0;
+            font-size: 25px;
+        }
+
+        .home .home-content .text-2{
+            font-size: 30px;
+        }
+        
+        .home .home-content .text-3{
+            font-size: 15px;
+        }
+
+        .home .home-content a{
+            font-size: 23px;
+            padding: 10px 30px;
+        }
+}
+
+@media (max-width: 400px){
+
+    .home .home-content .text-2{
+        font-size: 30px;
+    }
+    
+    .home .home-content .text-3{
+        font-size: 15px;
+    }
 }
